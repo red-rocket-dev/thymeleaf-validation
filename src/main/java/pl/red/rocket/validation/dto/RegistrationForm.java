@@ -2,6 +2,7 @@ package pl.red.rocket.validation.dto;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigInteger;
 
@@ -10,6 +11,7 @@ public class RegistrationForm {
     @Size(min = 2, max = 30)
     private String name;
     @Min(10_000)
+    @NotNull
     private BigInteger salary;
 
     public String getName() {
