@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf validation showcase</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<form action="#" th:action="@{/}" th:object="${form}" method="post">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" th:field="*{name}">
+        <p class="alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+    </div>
+    <div class="form-group">
+        <label for="salary">Salary:</label>
+        <input type="number" class="form-control" id="salary" th:field="*{salary}">
+        <p class="alert alert-danger" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</body>
+</html>
